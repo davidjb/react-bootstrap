@@ -110,6 +110,12 @@ describe('<Button>', () => {
     mount(<Button>Title</Button>).assertSingle(`.btn-primary`);
   });
 
+  it('Should remove default variant', () => {
+    mount(<Button variant={null}>Title</Button>)
+      .find(`.btn-primary`)
+      .should.have.length(0);
+  });
+
   it('Should be active', () => {
     mount(<Button active>Title</Button>).assertSingle(`.active`);
   });
